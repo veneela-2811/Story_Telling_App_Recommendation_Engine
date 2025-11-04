@@ -1,46 +1,67 @@
-                                                                                                               Telugu Story Recommendation Engine
+# 📚 Story Recommendation Engine
 
-This project presents the development of a multi-phase story recommendation engine designed to deliver relevant and engaging Telugu stories based on user behavior, popularity, time trends, and real-world context. The system begins with a popularity-based recommender that suggests widely appreciated stories suitable for new or anonymous users. It then advances to a collaborative filtering model, offering personalized recommendations by analyzing patterns in user ratings. A time-based recommendation phase highlights stories that have remained consistently popular over the years or during specific periods, capturing shifting reader interests. Finally, a context-aware recommendation system integrates real-world festivals and holidays by using semantic text similarity and external API data to recommend culturally relevant stories. This layered approach ensures both personalized and occasion-specific story suggestions, enhancing the reader’s experience and making the platform more interactive, intelligent, and culturally meaningful.
+An intelligent and modular recommendation engine designed to enhance storytelling platforms by suggesting relevant, personalized, and context-aware stories.  
+This engine combines popularity, collaborative filtering, time-based trends, and occasion-aware insights to provide dynamic recommendations to users.
 
-Phase 1: Popularity-Based Recommender
-Goal: Suggest widely appreciated stories to all users, especially first-time visitors.
-Method: Ranks stories based on number of ratings and average rating to produce a list of the most engaging and liked stories.
+---
 
-Phase 2: Collaborative Filtering
-Goal: Provide personalized story recommendations based on user behavior.
-Method:
-Filters out inactive users and unpopular stories.
-Constructs a user-story matrix.
-Uses cosine similarity to find stories similar to those a user liked.
-Returns top matches for any given story.
+## 🚀 Overview
 
-Phase 3: Time-Based & Trend-Based Recommender
-Goal: Highlight stories with lasting appeal and those that are trending during a specific time period.
-Method:
-Adjusts story popularity by considering the number of years since publication.
-Extracts year-wise trends using grouped analysis.
-Provides genre-based insights for each time window.
+Traditional story apps rely on static popularity or manual tagging, which often fails to adapt to user interests or seasonal trends.  
+This recommendation engine bridges that gap by learning from user ratings, analyzing reading patterns, and considering contextual cues such as time and festivals.
 
-Phase 4: Context-Aware Recommender
-Goal: Recommend festival-themed Telugu stories using real-world context.
-Method:
-Extracts story text from .txt files.
-Detects current festivals via the Calendarific API.
-Generates semantic embeddings using pretrained multilingual sentence transformers.
-Uses cosine similarity to match relevant stories with festivals.
+---
 
-Tech Stack:
-Python (Pandas, NumPy, Matplotlib, Seaborn)
-Scikit-learn (Similarity computation)
-Sentence Transformers (sentence-transformers library)
-Calendarific API (for dynamic festival detection)
-Google Colab
+## 🧠 Features
 
-Outcomes
-General-purpose story ranking for cold-start users.
-Personalized recommendations for returning users.
-Insights into long-term popular and trending stories.
-Smart story suggestions based on real-life festivals.
+- **Popularity-Based Recommendations** — Suggests top-rated and most-read stories.  
+- **Collaborative Filtering** — Uses user–item similarity (Cosine Similarity) to recommend stories liked by similar users.  
+- **Time-Based Recommendations** — Identifies trending stories within a specific time period (month/year).  
+- **Occasion-Aware Recommendations** — Integrates with festival APIs to recommend contextually relevant stories.  
+- **Semantic Similarity Engine** — Uses sentence embeddings to recommend stories similar in theme or meaning.  
+- **Modular Design** — Each approach is encapsulated as an independent function for easy integration.
 
+---
 
+## 🏗️ Project Workflow
 
+1. **Data Collection:**  
+   Gathered user-story interactions (ratings, timestamps) and metadata (story title, genre, summary).
+
+2. **Data Preprocessing:**  
+   Cleaned and transformed the dataset using `pandas` and `numpy`.
+
+3. **Feature Extraction:**  
+   - Created a user–item matrix for collaborative filtering.  
+   - Extracted textual embeddings using `SentenceTransformer (paraphrase-multilingual-MiniLM-L12-v2)`.
+
+4. **Recommendation Modules Implemented:**
+   - Popularity-Based  
+   - Collaborative Filtering  
+   - Time-Based & Period-Based  
+   - Occasion-Aware (using Calendarific API or similar)
+
+5. **Integration Layer:**  
+   Each function returns recommendations as a **Python list or JSON** for direct use by the **backend or frontend** teams.
+
+---
+
+## ⚙️ Tech Stack
+
+| Category | Libraries/Tools Used |
+|-----------|----------------------|
+| **Data Processing** | pandas, numpy |
+| **Modeling / Similarity** | scikit-learn (cosine_similarity), SentenceTransformer |
+| **Contextual Intelligence** | Calendarific API *(or alternatives like Holiday API, Abstract API)* |
+| **Utility** | datetime, requests |
+| **Output Format** | JSON / Python dict for easy API integration |
+
+---
+
+## 🧩 How to Use
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/story-recommendation-engine.git
+   cd story-recommendation-engine
+                                                                                           
