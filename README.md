@@ -64,7 +64,7 @@ Delivered a fully modular recommendation engine that can plug into any storytell
 
 Improved user engagement by providing contextual and personalized story suggestions.
 
-Demonstrated scalable architecture ready for API-based deployment.
+Different modules served different purposes thus making it highly efficent for modern day story telling apps and recommender systems.
 
 ---
 
